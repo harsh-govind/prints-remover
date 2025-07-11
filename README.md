@@ -15,10 +15,11 @@ A powerful VS Code extension that helps you remove console.log, console.error, a
 
 ### From VSIX (Recommended)
 
-1. Download the latest `.vsix` file from the releases
+1. Download the latest `.vsix` file from the [Releases](https://github.com/harsh-govind/prints-remover/releases) page
 2. In VS Code, go to Extensions (Ctrl+Shift+X)
 3. Click the "..." menu and select "Install from VSIX..."
 4. Choose the downloaded `.vsix` file
+5. Restart VS Code
 
 ### From Source
 
@@ -29,32 +30,21 @@ A powerful VS Code extension that helps you remove console.log, console.error, a
 
 ## Usage
 
-### Basic Usage
+### Quick Start
 
 1. Open VS Code
-2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open the command palette
+2. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux) to open the command palette
 3. Type "Remove Prints" and select the command
 4. Follow the prompts to configure your removal preferences
 
-### Step-by-Step Process
+### Keyboard Shortcut
 
-1. **Choose Scope**:
+- **Mac**: `Cmd+Shift+R`
+- **Windows/Linux**: `Ctrl+Shift+R`
 
-   - **Current File**: Remove console logs from the currently active file
-   - **Specific File**: Select a specific file to process
-   - **Entire Folder**: Process all supported files in a selected folder
+### Context Menu
 
-2. **Select Console Types**:
-
-   - **console.log only**: Remove only console.log statements
-   - **console.error only**: Remove only console.error statements
-   - **console.warn only**: Remove only console.warn statements
-   - **console.info only**: Remove only console.info statements
-   - **console.debug only**: Remove only console.debug statements
-   - **All console types**: Remove all console statements (log, error, warn, info, debug, trace, dir, table, etc.)
-   - **Custom selection**: Choose specific console types to remove
-
-3. **Review Results**: The extension will show you a summary of what was removed and provide detailed results in the output channel.
+Right-click in any code file and select "Remove Prints" from the context menu.
 
 ## Supported File Types
 
@@ -110,10 +100,6 @@ The extension supports a wide range of file types:
 - Detailed results for each processed file
 - Summary of total files processed and console statements removed
 - Error reporting for troubleshooting
-
-## Configuration
-
-The extension works out of the box with default settings. No additional configuration is required.
 
 ## Development
 
@@ -176,3 +162,4 @@ If you encounter any issues or have feature requests, please open an issue on Gi
 - Progress tracking and detailed results
 - Smart comment preservation
 - Comprehensive error handling
+- Keyboard shortcuts and context menu integration
