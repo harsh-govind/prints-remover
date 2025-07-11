@@ -1,14 +1,17 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs';
-import * as path from 'path';
 import { ConsoleLogRemover } from './consoleLogRemover';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Prints Remover extension is now active!');
 
-    let disposable = vscode.commands.registerCommand('prints-remover.removeConsoleLogs', async () => {
-        const remover = new ConsoleLogRemover();
-        await remover.removeConsoleLogs();
+    // Register the command
+    const disposable = vscode.commands.registerCommand('prints-remover.removeConsoleLogs', async () => {
+        try {
+            const remover = new ConsoleLogRemover();
+            await remover.removeConsoleLogs();
+        } catch (error) {
+            vscode.window.showErrorMessage(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
     });
 
     context.subscriptions.push(disposable);
