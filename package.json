@@ -1,0 +1,75 @@
+{
+  "name": "prints-remover",
+  "displayName": "Prints Remover",
+  "description": "Remove console.log, console.error, and other console statements from your code",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:prints-remover.removeConsoleLogs"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "prints-remover.removeConsoleLogs",
+        "title": "Remove Prints",
+        "category": "Prints Remover"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "prints-remover.removeConsoleLogs",
+          "when": "editorTextFocus"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "prints-remover.removeConsoleLogs",
+          "group": "1_modification",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.11",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^16.18.126",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^8.26.0",
+    "glob": "^11.0.3",
+    "mocha": "^11.7.1",
+    "typescript": "^4.8.4"
+  },
+  "publisher": "harsh-govind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harsh-govind/prints-remover.git"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "remove",
+    "cleanup",
+    "debug"
+  ],
+  "license": "MIT"
+}
